@@ -38,10 +38,12 @@ python -m ipykernel install --user --name=project-env --display-name "Python (pr
 
 jupyter notebook
 
-8. Select the Correct Kernel
+8. Run train&test.ipynb as desired
+
+If you are training a model just run the file. If you want to test the performance of the model run the entire file. Go down to episode loop and stop the model from training. In Test Model Performance at Upper Limit set the models you want to test and run that and the rest of the cells until the testing loop is finished. 
+
+9. Select the Correct Kernel
 
 Select the kernel: Python (project-env)
 
-9. Run train&test.ipynb as desired
-
-10. To run run.py all you need to do is have python 3.11 and install/activate the venv.
+10. To run run.py all you need to do is have python 3.11 and install/activate the venv. I would also recommend reading the Run Run.py Instructions in readme.md to full grasp what is going on. 

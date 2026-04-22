@@ -1,9 +1,9 @@
 **Quick Start**
 
 1. Install env according to SETUP.md
-2. To train go to train&test.ipynb and run through first half training portion
-3. To test load model you want to test in second half of train&test.ipynb, load all cells, and then run the final cell to display testing matrices. 
-4. To use in real life run run.py and watching the following video to understand how it works: 
+2. To train go to train&test.ipynb and run through first half training portion to Episode Loop and the name that you want the models saved as after Episode Loop. 
+3. To test load model you want to test in second half of train&test.ipynb, load all cells, stop the Episode Loop, then run all cells after Test Model Performance at Upper-Limit to display how my final model performed. 
+4. To use in real life run run.py, read the Run run.py Instructions section, and watching the following video to understand how it works: 
 
 **Demo Video/Video Links**
 
@@ -55,5 +55,19 @@ To evaluate the action model, the key metrics are the percentages of wins, draws
 To evaluate the betting model, the Bet vs. True Count and Normalized Results Per Run graphs provide insight into how often different bet sizes are used and at which true counts. However, the most important metric is the edge. As shown in the test metrics, the model achieved an edge of approximately 4.3%. This suggests that the model is performing extremely well, significantly exceeding the typical player edge of 0.5–1.5%.
 Overall, both the betting and action models demonstrate strong performance and successfully learn strategies consistent with - and with respect to the reward model better than - effective card counting. 4.3% edge is a surprising result as it is significantly better than standard card counting. However, the inclusion of the probability distribution is driving force behind the improvement. People do not have the capacity to memorize seen cards and their distributions exactly, thus the model has a sizeable advantage for predicting cards. Additionally, the environment I created is friendly for card counting. 0.87 penetration means that this is how much of the deck is played until they shuffle. 0.87 is a large percentage of the deck that the model gets to see. Thus, the farther into the deck the game goes the better off the model is (as it can accurately predict what is next based off of the cards that it has seen so far). Under simular conditions, a human card counter is estimates to get a 2.0% edge. Thus, even though the environment is tailored to card counting, the model still performs better than humans.  
 
-
+**Run run.py Instructions**
+Game flow: 
+1. Have the dictionary open in run.py under the main loop so that you know what the action and bet commands mean. 
+2. At the start of each hand click 3 to get the bet prediction. 
+3. Use the dictionary to find the bet value and enter 2 and then enter the bet value so the model knows the current bet. 
+4. Press 0 and enter the card you got for your first dealt card. 
+5. Press 0 and enter the card you got for your second dealt card. 
+6. Press 1 and enter the card the dealer got that is showing. 
+7. Press 4 and get the action prediction from the model. 
+8. Interpret the action from the dictionary and play this action in the game. 
+9. For each new card you get dealt as a player, until you stand, press 0 and add that card to your hand. 
+10. Once you stand add each card the dealer has hidden and then deals to themselves to the model with 0 (0 is used for both you cards as a player and all of the dealers non-up cards from the start of the game) and then the card value one at a time.
+11. Click 5 and clear you hand when the hand is over. 
+12. Do this all again
+When the shoe is reshuffled click 6 and end the run. For the next shoe rerun run.py. 
 
