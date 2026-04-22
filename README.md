@@ -7,7 +7,7 @@
 
 **Demo Video/Video Links**
 
-https://youtube.com/shorts/BczC19fXey4?feature=share
+https://youtu.be/QIEtPpetgIY
 
 This video shows the model working on a phone game.  
 

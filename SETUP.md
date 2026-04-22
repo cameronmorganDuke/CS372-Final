@@ -4,7 +4,7 @@ git clone <your-repo-url>
 
 cd <your-repo-folder>
 
-2. If .venv is not already included or if you want your own
+2. Create Virtual Environment
 
 python3 -m venv .venv
 
